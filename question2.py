@@ -9,8 +9,8 @@ old_allocation = {'Account_name': ['Arbitrage','Quant','Discretionary'],
                  }
 # New Capital Allocation
 # Change values here
-new_allocation = {'Account_name': ['Arbitrage','Quant','Discretionary', 'SEC Fines', 'lll'],
-                  'allocation_fraction': [0.3,0.4,0.1,0.1, 0.1]
+new_allocation = {'Account_name': ['Arbitrage','Quant','Discretionary', 'SEC Fines'],
+                  'allocation_fraction': [0.3,0.5,0.1,0.1]
                  }
 # Dataframe for new captial allocation
 df_old = pd.DataFrame(old_allocation, columns = ['Account_name', 'Capital', 'allocation_fraction'])
