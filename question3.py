@@ -103,6 +103,7 @@ def FTX_perpetual_future_data(market_name, start_dt, end_dt):
     df=df.sort_values(by='startTime')
     return df
 
+# Get spot price for dataobtained from ftx
 def spot_prices_ohlcv(dt, pair, period='1d'):
     ohlcv = []
     limit = 1000
@@ -192,6 +193,7 @@ def sortino_ratio(df):
     sorintino_ratio = (expected_return-rfr/down_stdev)* np.sqrt((252*288)**0.5)
     return sorintino_ratio
 
+# Information ratio
 def information_ratio(df_btc, df_eth):
     benchmark_returns = df_eth['Close']
     returns = df_btc['Close']
@@ -200,6 +202,7 @@ def information_ratio(df_btc, df_eth):
     information_ratio = return_difference.mean() / volatility
     return information_ratio* np.sqrt((252*288)**0.5)
 
+# Tracking error
 def tracking_error(df, roll=False):
     if not roll:
         tracking_error = np.std((df['Close'].values - df['Close_FUT'].values) / df['Close_FUT'].values)
@@ -219,6 +222,7 @@ if CALCULATE_RATIOS:
     print(f'Sharp ratio ETH: {sharp_ratio_eth}')
     print(f'Sortino ratio ETH: {sortino_ratio_eth}')
 else:
+    # Tracking Error calculated for futures (i.e. BTC and ETH)
     df_eth = pd.read_csv('eth_usd_5m_2020MayTo2021May.csv')
     df_btc = pd.read_csv('btc_usd_5m_2020MayTo2021May.csv')
     df_eth_futures = pd.read_csv('eth_usd_futures_5m_2020MayTo2021May.csv')
