@@ -13,9 +13,9 @@ from threading import Thread
 
 # Coin base sandbox stuff
 #===================================================================================================================
-coinbase_API_key = "819744d7c013532e78850c9d39fe4f4f"
-pass_phrase = "es1xqkb0j7s"
-coinbase_API_secret = "mBc9J7AEsbfseEnY2QZHiGel4c2UnWCFVBw6bTqE77798DEZfFYe5QltBD+fWFHltozWr4sG1rnyhsNUeanvUQ=="
+coinbase_API_key = ""
+pass_phrase = ""
+coinbase_API_secret = ""
 
 url = 'https://api-public.sandbox.pro.coinbase.com'
 client = cbpro.AuthenticatedClient(
